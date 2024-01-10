@@ -1,0 +1,103 @@
+<div class="container">
+    <h2>User Registration Form </h2>
+    <!-- <p *ngIf="cname.length>2">form is valid </p> -->
+<form #userForm="ngForm" (ngSubmit)="formSubmitted(userForm)">
+    <p style="color: rgb(71, 165, 42);" *ngIf="userForm.valid">Form Is Valid ✔</p>
+    <table>
+        <tr>
+            <td>Name</td>
+
+            <td>
+                
+                <input type="text" required placeholder="Enter Name " name ="name" ngModel #namearea="ngModel"/>
+              chuwa:{{namearea.dirty}}
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>Email</td>
+
+            <td>
+
+                <input type="text" required placeholder="Enter Email " name ="Email" ngModel />
+            </td>
+
+        </tr>
+        <tr>
+            <td>About</td>
+
+            <td>
+
+                <textarea cols="22" rows="5" name="About" ngModel></textarea>
+            </td>
+
+        </tr>
+        <tr>
+            <td>Gender</td>
+
+            <td>
+
+                <input type="radio" ngModel name ="gender" value="male"/>Male 
+                <input type="radio" ngModel name ="gender" value="female"/>Female
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+
+            <td>City</td>
+            <td>
+                <select name ="city" ngModel>
+
+                    <option value="Patna">Patna</option>
+                    <option value="Siwan">Siwan</option>
+                    <option value="Gopalganj">Gopalganj</option>
+                    <option value="Banshibatarahan">Banshibatarahan</option>
+                    <option value="Notaki">Notaki</option>
+
+
+                </select>
+
+            </td>
+        </tr>
+        <tr>
+
+            <td colspan="2">
+
+                <button type="submit">Submit</button>
+                <button type="reset">clear</button>
+
+            </td>
+
+
+        </tr>
+
+        <div>
+
+
+            <h2>Form Details</h2>
+          value:  {{userForm.value | json}}
+          <br>
+          touched:  {{userForm.touched}}
+          <br>
+          क्या आपने सबमिट किया :  {{userForm.submitted }}
+          <br>
+          
+         isDirty:{{userForm.dirty}}
+        </div>
+    </table>
+
+
+
+
+</form>
+
+
+
+
+
+
+</div>
