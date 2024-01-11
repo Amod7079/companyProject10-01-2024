@@ -1,0 +1,62 @@
+<h1>Reactive Form example</h1>
+
+<div class="Form-container">
+    <h1 style="color: brown ;">User Registration Form </h1>
+    <form [formGroup]="userForm" (ngSubmit)="formSubmitted()">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" placeholder="Enter Your Name" formControlName="name"/></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" placeholder="Enter Your Email" formControlName="email" /></td>
+            </tr>
+
+            <tr>
+                <td>About:</td>
+                <td><input type="text" placeholder="अर्ज़ किजिए अपने बारे में" formControlName="about" /></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td><input  type="radio" value="male" formControlName="gender"    name="gender" />Male
+                    <input  type="radio" value ="Female" formControlName="gender" name="gender" />Female
+                </td>
+            </tr>
+            <tr>
+                <td>कहां से बाडू करेजा:</td> 
+                <td>
+                    <select name="city" formControlName="city">
+                        <option value="patna">Patna</option>
+                        <option value="gopalganj">Gopalganj</option>
+                        <option value="mirganj">Mirganj</option>
+                        <option value="rajapur">Rajapur</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+               <td colspan="2" style="text-align: center">
+                
+               
+               <button type="submit">Submit</button> &nbsp; <button>Reset</button>
+
+               </td>
+            </tr>
+
+
+
+
+
+
+
+
+        </table>
+
+
+
+
+
+
+    </form>
+</div>
